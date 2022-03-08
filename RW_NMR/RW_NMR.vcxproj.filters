@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\rw">
+      <UniqueIdentifier>{280049fa-46f2-4d3d-830e-e397961d6510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rw">
+      <UniqueIdentifier>{a0c50d0b-6dff-4882-a135-6d0cf2d177d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rw\plug_persistent">
+      <UniqueIdentifier>{635e71d6-ae37-40e2-9ae5-f37bddfe54d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rw\plug_persistent">
+      <UniqueIdentifier>{776771ff-a0cb-41de-ade1-74566f01575c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rw\binary_image">
+      <UniqueIdentifier>{5f6cfa61-b697-41bf-90c4-f35267323e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rw\binary_image">
+      <UniqueIdentifier>{acf96d73-8d94-4b01-8fe9-e0a438ecb62a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\front_end">
+      <UniqueIdentifier>{5d1a9455-d63d-4061-869d-345d6da59eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\front_end\volume">
+      <UniqueIdentifier>{67fda323-71aa-4294-a78e-0c8cbee2db3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\front_end">
+      <UniqueIdentifier>{a44219c2-8d09-4365-9cce-97a8824ea8cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\front_end\volume">
+      <UniqueIdentifier>{b31d61b7-5383-47cb-ab9f-6cdecee0a298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\front_end\rwui">
+      <UniqueIdentifier>{b45e153e-1dd3-4457-9147-fb19dad34119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\front_end\rwui">
+      <UniqueIdentifier>{31d15151-6719-42b7-875c-043062c22897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\front_end\persistent_ui">
+      <UniqueIdentifier>{f856e666-3ef4-49c6-b52c-3e239b0eae38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\front_end\persistent_ui">
+      <UniqueIdentifier>{aeeee33d-5d46-469f-aee7-faa678b40889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gl">
+      <UniqueIdentifier>{34171c42-881d-459b-bbf4-7b490c302ac4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gl">
+      <UniqueIdentifier>{e18f9ab7-11c2-4cde-acb1-1cac5d5ae2c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la">
+      <UniqueIdentifier>{fdd7e2d9-e806-42d3-8aaf-5f51683756bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la">
+      <UniqueIdentifier>{6c263ac9-b6c3-4391-b372-c878398bf6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\txt">
+      <UniqueIdentifier>{b1e3716e-7335-4529-b11a-2b82b0f15ddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\math_lac">
+      <UniqueIdentifier>{2a01ab55-955e-41eb-97ae-1b902a2bf363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\file">
+      <UniqueIdentifier>{5bd6c27f-7828-4403-99ac-1d472f43303c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\math_lac\full">
+      <UniqueIdentifier>{df0ccaa8-fbd7-4633-a12e-f4cff6dd7a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\math_lac\genetic">
+      <UniqueIdentifier>{9d39b9ac-5ff3-48a6-8805-cd74658ead67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math_la\math_lac\space">
+      <UniqueIdentifier>{c1a1fe2e-70fd-460a-824e-c175491b9650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la\full">
+      <UniqueIdentifier>{f1eee9f0-faea-42aa-a265-6e1f695beca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la\genetic">
+      <UniqueIdentifier>{de37ebec-e12b-4cac-aafc-9a82c9460344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la\space">
+      <UniqueIdentifier>{a018643b-1aac-4fe2-9220-dfdc80da9b32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la\txt">
+      <UniqueIdentifier>{711b85f3-4c71-4ea0-b6d3-1b56ebeeb393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math_la\file">
+      <UniqueIdentifier>{d516b64b-8f0b-4c28-9023-8a86b4063609}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\rw\binary_image\rgb_color.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\simulator.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\sigmoid.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rw_simulator_impl.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rw_placer.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rw_impl_creator.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rw_gpu_degrade_impl.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rw_cpu_degrade_impl.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\rev.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\relaxivity_optimizer.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\relaxivity_experiment.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\relaxivity_distribution.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\random_walk_observer.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\profile_simulator.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\plug.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\hat.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\exponential_fitting.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\experiment_report.cpp">
+      <Filter>Source Files\rw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\persistence\plug_persistent.cpp">
+      <Filter>Source Files\rw\plug_persistent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_border_creator.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_clusterer.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_denoiser.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_group_mask.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_mask_handler.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_opener.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rw\binary_image\binary_image_watershed_clusterer.cpp">
+      <Filter>Source Files\rw\binary_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\volume\volume_panel.cpp">
+      <Filter>Source Files\front_end\volume</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\volume\win_volume.cpp">
+      <Filter>Source Files\front_end\volume</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\dlg_import.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\dlg_pore_size.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\dlg_regularizer.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_genetic.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_image.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_main.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_rev.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_sample.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\rwui\win_sims.cpp">
+      <Filter>Source Files\front_end\rwui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\persistent_ui\persistent_ui.cpp">
+      <Filter>Source Files\front_end\persistent_ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gl\graphics_buffer.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gl\shader.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gl\trackball.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\full\matrix.cpp">
+      <Filter>Source Files\math_la\full</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\full\vector.cpp">
+      <Filter>Source Files\math_la\full</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\genetic\creature.cpp">
+      <Filter>Source Files\math_la\genetic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\genetic\population.cpp">
+      <Filter>Source Files\math_la\genetic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx2.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx3.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx4.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\vec2.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\vec3.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\math_lac\space\vec4.cpp">
+      <Filter>Source Files\math_la\space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\txt\converter.cpp">
+      <Filter>Source Files\math_la\txt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\txt\parameters.cpp">
+      <Filter>Source Files\math_la\txt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\txt\separator.cpp">
+      <Filter>Source Files\math_la\txt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wx_gl_panel.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wx_image_adapter.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wx_image_panel.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wx_plotter.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wx_progress_adapter.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\front_end\wxhst3d.cpp">
+      <Filter>Source Files\front_end</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\file\binary.cpp">
+      <Filter>Source Files\math_la\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math_la\file\file.cpp">
+      <Filter>Source Files\math_la\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\rw\walker.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\simulator.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\sim_params.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\sigmoid.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rw_simulator_impl.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rw_placer.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rw_impl_creator.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rw_gpu_degrade_impl.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rw_cpu_degrade_impl.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\rev.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\relaxivity_optimizer.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\relaxivity_experiment.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\relaxivity_distribution.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\random_walk_step_value.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\random_walk_observer.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\random_walk_implementor.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\profile_simulator.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\plug.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\hat.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\exponential_fitting.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\field3d.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\experiment_report.h">
+      <Filter>Header Files\rw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\persistence\plug_persistent.h">
+      <Filter>Header Files\rw\plug_persistent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_border_creator.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_clusterer.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_denoiser.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_executor.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_group_mask.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_mask_handler.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_opener.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\binary_image_watershed_clusterer.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\box3d.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\pos3i.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rw\binary_image\rgb_color.h">
+      <Filter>Header Files\rw\binary_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\volume\volume_panel.h">
+      <Filter>Header Files\front_end\volume</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\volume\win_volume.h">
+      <Filter>Header Files\front_end\volume</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\dlg_import.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\dlg_pore_size.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\dlg_regularizer.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_genetic.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_image.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_main.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_rev.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_sample.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\rwui\win_sims.h">
+      <Filter>Header Files\front_end\rwui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\persistent_ui\persistent_ui.h">
+      <Filter>Header Files\front_end\persistent_ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gl\graphics_buffer.h">
+      <Filter>Header Files\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gl\shader.h">
+      <Filter>Header Files\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gl\trackball.h">
+      <Filter>Header Files\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\mdefs.h">
+      <Filter>Header Files\math_la</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\simdf.h">
+      <Filter>Header Files\math_la</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\txt\converter.h">
+      <Filter>Header Files\math_la\txt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\txt\parameters.h">
+      <Filter>Header Files\math_la\txt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\txt\separator.h">
+      <Filter>Header Files\math_la\txt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\file\binary.h">
+      <Filter>Header Files\math_la\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\file\file.h">
+      <Filter>Header Files\math_la\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\full\matrix.h">
+      <Filter>Header Files\math_la\math_lac\full</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\full\vector.h">
+      <Filter>Header Files\math_la\math_lac\full</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\genetic\creature.h">
+      <Filter>Header Files\math_la\math_lac\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\genetic\population.h">
+      <Filter>Header Files\math_la\math_lac\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx2.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx3.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx4.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\vec2.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\vec3.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math_la\math_lac\space\vec4.h">
+      <Filter>Header Files\math_la\math_lac\space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_gl_panel.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_image_adapter.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_image_panel.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_plotter.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_progress_adapter.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wx_rgbcolor.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\front_end\wxhst3d.h">
+      <Filter>Header Files\front_end</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

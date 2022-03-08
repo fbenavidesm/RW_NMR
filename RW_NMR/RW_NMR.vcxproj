@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{88c6fd86-05ea-40f2-afd0-346a6d83bb14}</ProjectGuid>
+    <RootNamespace>RWNMR</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseInteloneTBB>true</UseInteloneTBB>
+    <UseInteloneMKL>Parallel</UseInteloneMKL>
+    <UseILP64Interfaces1A>true</UseILP64Interfaces1A>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseInteloneTBB>true</UseInteloneTBB>
+    <UseInteloneMKL>Parallel</UseInteloneMKL>
+    <UseILP64Interfaces1A>true</UseILP64Interfaces1A>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;WINVER=0x0500;_WINDOWS;__WXMSW__;WXUSINGDLL;wxUSE_GUI=1;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;UNICODE;_UNICODE;NOMINMAX;_DEBUG;__WXDEBUG__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>../src;$(WX)/lib/vc_x64_dll/mswud/;$(GLEW)/include/;$(WX)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32d.lib;wxmsw31ud_xrc.lib;wxmsw31ud_richtext.lib;wxmsw31ud_propgrid.lib;wxmsw31ud_aui.lib;wxmsw31ud_ribbon.lib;wxmsw31ud_gl.lib;wxmsw31ud_adv.lib;wxmsw31ud_stc.lib;wxmsw31ud_html.lib;wxmsw31ud_webview.lib;wxmsw31ud_qa.lib;wxmsw31ud_media.lib;wxmsw31ud_core.lib;wxbase31ud_net.lib;wxbase31ud_xml.lib;wxbase31ud.lib;wxscintillad.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;opengl32.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(GLEW)/lib/Debug/x64/;$(WX)/lib/vc_x64_dll/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;WINVER=0x0500;_WINDOWS;__WXMSW__;WXUSINGDLL;wxUSE_GUI=1;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;UNICODE;_UNICODE;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>../src;$(WX)/lib/vc_x64_dll/mswu/;$(GLEW)/include/;$(WX)/include/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;wxmsw31u_xrc.lib;wxmsw31u_richtext.lib;wxmsw31u_propgrid.lib;wxmsw31u_aui.lib;wxmsw31u_ribbon.lib;wxmsw31u_gl.lib;wxmsw31u_adv.lib;wxmsw31u_stc.lib;wxmsw31u_html.lib;wxmsw31u_webview.lib;wxmsw31u_qa.lib;wxmsw31u_media.lib;wxmsw31u_core.lib;wxbase31u_net.lib;wxbase31u_xml.lib;wxbase31u.lib;wxscintilla.lib;wxtiff.lib;wxjpeg.lib;wxpng.lib;wxzlib.lib;wxregexu.lib;opengl32.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(GLEW)/lib/Release/x64/;$(WX)/lib/vc_x64_dll/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\front_end\persistent_ui\persistent_ui.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\dlg_import.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\dlg_pore_size.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\dlg_regularizer.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_genetic.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_image.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_main.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_rev.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_sample.cpp" />
+    <ClCompile Include="..\src\front_end\rwui\win_sims.cpp" />
+    <ClCompile Include="..\src\front_end\volume\volume_panel.cpp" />
+    <ClCompile Include="..\src\front_end\volume\win_volume.cpp" />
+    <ClCompile Include="..\src\front_end\wxhst3d.cpp" />
+    <ClCompile Include="..\src\front_end\wx_gl_panel.cpp" />
+    <ClCompile Include="..\src\front_end\wx_image_adapter.cpp" />
+    <ClCompile Include="..\src\front_end\wx_image_panel.cpp" />
+    <ClCompile Include="..\src\front_end\wx_plotter.cpp" />
+    <ClCompile Include="..\src\front_end\wx_progress_adapter.cpp" />
+    <ClCompile Include="..\src\gl\graphics_buffer.cpp" />
+    <ClCompile Include="..\src\gl\shader.cpp" />
+    <ClCompile Include="..\src\gl\trackball.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\math_la\file\binary.cpp" />
+    <ClCompile Include="..\src\math_la\file\file.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\full\matrix.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\full\vector.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\genetic\creature.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\genetic\population.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx2.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx3.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\mtx4.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\vec2.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\vec3.cpp" />
+    <ClCompile Include="..\src\math_la\math_lac\space\vec4.cpp" />
+    <ClCompile Include="..\src\math_la\txt\converter.cpp" />
+    <ClCompile Include="..\src\math_la\txt\parameters.cpp" />
+    <ClCompile Include="..\src\math_la\txt\separator.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_border_creator.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_clusterer.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_denoiser.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_group_mask.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_mask_handler.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_opener.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\binary_image_watershed_clusterer.cpp" />
+    <ClCompile Include="..\src\rw\binary_image\rgb_color.cpp" />
+    <ClCompile Include="..\src\rw\experiment_report.cpp" />
+    <ClCompile Include="..\src\rw\exponential_fitting.cpp" />
+    <ClCompile Include="..\src\rw\hat.cpp" />
+    <ClCompile Include="..\src\rw\persistence\plug_persistent.cpp" />
+    <ClCompile Include="..\src\rw\plug.cpp" />
+    <ClCompile Include="..\src\rw\profile_simulator.cpp" />
+    <ClCompile Include="..\src\rw\random_walk_observer.cpp" />
+    <ClCompile Include="..\src\rw\relaxivity_distribution.cpp" />
+    <ClCompile Include="..\src\rw\relaxivity_experiment.cpp" />
+    <ClCompile Include="..\src\rw\relaxivity_optimizer.cpp" />
+    <ClCompile Include="..\src\rw\rev.cpp" />
+    <ClCompile Include="..\src\rw\rw_cpu_degrade_impl.cpp" />
+    <ClCompile Include="..\src\rw\rw_gpu_degrade_impl.cpp" />
+    <ClCompile Include="..\src\rw\rw_impl_creator.cpp" />
+    <ClCompile Include="..\src\rw\rw_placer.cpp" />
+    <ClCompile Include="..\src\rw\rw_simulator_impl.cpp" />
+    <ClCompile Include="..\src\rw\sigmoid.cpp" />
+    <ClCompile Include="..\src\rw\simulator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\front_end\persistent_ui\persistent_ui.h" />
+    <ClInclude Include="..\src\front_end\rwui\dlg_import.h" />
+    <ClInclude Include="..\src\front_end\rwui\dlg_pore_size.h" />
+    <ClInclude Include="..\src\front_end\rwui\dlg_regularizer.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_genetic.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_image.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_main.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_rev.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_sample.h" />
+    <ClInclude Include="..\src\front_end\rwui\win_sims.h" />
+    <ClInclude Include="..\src\front_end\volume\volume_panel.h" />
+    <ClInclude Include="..\src\front_end\volume\win_volume.h" />
+    <ClInclude Include="..\src\front_end\wxhst3d.h" />
+    <ClInclude Include="..\src\front_end\wx_gl_panel.h" />
+    <ClInclude Include="..\src\front_end\wx_image_adapter.h" />
+    <ClInclude Include="..\src\front_end\wx_image_panel.h" />
+    <ClInclude Include="..\src\front_end\wx_plotter.h" />
+    <ClInclude Include="..\src\front_end\wx_progress_adapter.h" />
+    <ClInclude Include="..\src\front_end\wx_rgbcolor.h" />
+    <ClInclude Include="..\src\gl\graphics_buffer.h" />
+    <ClInclude Include="..\src\gl\shader.h" />
+    <ClInclude Include="..\src\gl\trackball.h" />
+    <ClInclude Include="..\src\math_la\file\binary.h" />
+    <ClInclude Include="..\src\math_la\file\file.h" />
+    <ClInclude Include="..\src\math_la\math_lac\full\matrix.h" />
+    <ClInclude Include="..\src\math_la\math_lac\full\vector.h" />
+    <ClInclude Include="..\src\math_la\math_lac\genetic\creature.h" />
+    <ClInclude Include="..\src\math_la\math_lac\genetic\population.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx2.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx3.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\mtx4.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\vec2.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\vec3.h" />
+    <ClInclude Include="..\src\math_la\math_lac\space\vec4.h" />
+    <ClInclude Include="..\src\math_la\mdefs.h" />
+    <ClInclude Include="..\src\math_la\simdf.h" />
+    <ClInclude Include="..\src\math_la\txt\converter.h" />
+    <ClInclude Include="..\src\math_la\txt\parameters.h" />
+    <ClInclude Include="..\src\math_la\txt\separator.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_border_creator.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_clusterer.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_denoiser.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_executor.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_group_mask.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_mask_handler.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_opener.h" />
+    <ClInclude Include="..\src\rw\binary_image\binary_image_watershed_clusterer.h" />
+    <ClInclude Include="..\src\rw\binary_image\box3d.h" />
+    <ClInclude Include="..\src\rw\binary_image\pos3i.h" />
+    <ClInclude Include="..\src\rw\binary_image\rgb_color.h" />
+    <ClInclude Include="..\src\rw\experiment_report.h" />
+    <ClInclude Include="..\src\rw\exponential_fitting.h" />
+    <ClInclude Include="..\src\rw\field3d.h" />
+    <ClInclude Include="..\src\rw\hat.h" />
+    <ClInclude Include="..\src\rw\persistence\plug_persistent.h" />
+    <ClInclude Include="..\src\rw\plug.h" />
+    <ClInclude Include="..\src\rw\profile_simulator.h" />
+    <ClInclude Include="..\src\rw\random_walk_implementor.h" />
+    <ClInclude Include="..\src\rw\random_walk_observer.h" />
+    <ClInclude Include="..\src\rw\random_walk_step_value.h" />
+    <ClInclude Include="..\src\rw\relaxivity_distribution.h" />
+    <ClInclude Include="..\src\rw\relaxivity_experiment.h" />
+    <ClInclude Include="..\src\rw\relaxivity_optimizer.h" />
+    <ClInclude Include="..\src\rw\rev.h" />
+    <ClInclude Include="..\src\rw\rw_cpu_degrade_impl.h" />
+    <ClInclude Include="..\src\rw\rw_gpu_degrade_impl.h" />
+    <ClInclude Include="..\src\rw\rw_impl_creator.h" />
+    <ClInclude Include="..\src\rw\rw_placer.h" />
+    <ClInclude Include="..\src\rw\rw_simulator_impl.h" />
+    <ClInclude Include="..\src\rw\sigmoid.h" />
+    <ClInclude Include="..\src\rw\simulator.h" />
+    <ClInclude Include="..\src\rw\sim_params.h" />
+    <ClInclude Include="..\src\rw\walker.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
