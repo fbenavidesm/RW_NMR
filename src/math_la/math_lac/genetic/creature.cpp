@@ -135,7 +135,7 @@ namespace math_la
 					den1 = den1 + (scalar)c->_genes[k];
 					den2 = den2 + (scalar)this->_genes[k];
 				}
-				scalar den = std::min(den1, den2);
+				scalar den = min(den1, den2);
 				if (den == 0)
 				{
 					den = 1;

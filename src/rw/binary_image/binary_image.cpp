@@ -457,17 +457,17 @@ namespace rw
 					uint v = (*this)(pp);
 					if (v == 0)
 					{
-						int f_r = std::min((int)(y*pore_color.Red() / (img.Height()) + pore_color.Red()), 255);
-						int f_g = std::min((int)(y*pore_color.Green() / (img.Height()) + pore_color.Green()), 255);
-						int f_b = std::min((int)(y*pore_color.Blue() / (img.Height()) + pore_color.Blue()), 255);
+						int f_r = min((int)(y*pore_color.Red() / (img.Height()) + pore_color.Red()), 255);
+						int f_g = min((int)(y*pore_color.Green() / (img.Height()) + pore_color.Green()), 255);
+						int f_b = min((int)(y*pore_color.Blue() / (img.Height()) + pore_color.Blue()), 255);
 						RGBColor c((uchar)f_r, (uchar)f_g, (uchar)f_b);
 						img(pp.x, pp.y, c);
 					}
 					else
 					{
-						int f_r = std::min((int)((img.Height() - y)*solid_color.Red() / (10 * img.Height()) + solid_color.Red()), 255);
-						int f_g = std::min((int)((img.Height() - y)*solid_color.Green() / (10 * img.Height()) + solid_color.Green()), 255);
-						int f_b = std::min((int)((img.Height() - y)*solid_color.Blue() / (10 * img.Height()) + solid_color.Blue()), 255);
+						int f_r = min((int)((img.Height() - y)*solid_color.Red() / (10 * img.Height()) + solid_color.Red()), 255);
+						int f_g = min((int)((img.Height() - y)*solid_color.Green() / (10 * img.Height()) + solid_color.Green()), 255);
+						int f_b = min((int)((img.Height() - y)*solid_color.Blue() / (10 * img.Height()) + solid_color.Blue()), 255);
 						RGBColor c((uchar)f_r, (uchar)f_g, (uchar)f_b);
 						img(pp.x, pp.y, c);
 					}
@@ -565,12 +565,12 @@ namespace rw
 				g = (BG * (i-1) + AG * (diam/2 - i+1)) / (diam / 2);
 			}
 
-			b = std::min((int)255, b);
-			b = std::max((int)0, b);
-			g = std::min((int)255, g);
-			g = std::max((int)0, g);
-			r = std::min((int)255, r);
-			r = std::max((int)0, r);
+			b = min((int)255, b);
+			b = max((int)0, b);
+			g = min((int)255, g);
+			g = max((int)0, g);
+			r = min((int)255, r);
+			r = max((int)0, r);
 			RGBColor color((uchar)r, (uchar)g, (uchar)b);
 			rmap[i] = color;
 			++ritr;
@@ -629,9 +629,9 @@ namespace rw
 						}
 						else
 						{
-							int f_r = std::min((int)(y*solid_color.Red() / (img.Height()) + solid_color.Red()), 255);
-							int f_g = std::min((int)(y*solid_color.Green() / (img.Height()) + solid_color.Green()), 255);
-							int f_b = std::min((int)(y*solid_color.Blue() / (img.Height()) + solid_color.Blue()), 255);
+							int f_r = min((int)(y*solid_color.Red() / (img.Height()) + solid_color.Red()), 255);
+							int f_g = min((int)(y*solid_color.Green() / (img.Height()) + solid_color.Green()), 255);
+							int f_b = min((int)(y*solid_color.Blue() / (img.Height()) + solid_color.Blue()), 255);
 							RGBColor color((uchar)f_r, (uchar)f_g, (uchar)f_b);
 							img(pp.x, pp.y, color);
 						}
@@ -668,7 +668,7 @@ namespace rw
 			uint black_voxels = 0;
 			int length = this->_width*this->_height*this->_depth;
 			tbb::spin_mutex mtx;
-			tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, std::max((int)length / 128, BCHUNK_SIZE)),
+			tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, max((int)length / 128, BCHUNK_SIZE)),
 				[this, &mtx, &black_voxels](const tbb::blocked_range<int>& b)
 			{
 				for (int i = b.begin(); i < b.end(); ++i)
@@ -702,7 +702,7 @@ namespace rw
 		distribution.clear();
 		int length = this->_width*this->_height*this->_depth;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, std::max((int)length / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, max((int)length / 128, BCHUNK_SIZE)),
 			[this, &mtx, &distribution](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)
@@ -773,7 +773,7 @@ namespace rw
 		rw::BinaryImage r;
 		r.Create(dx, dy, dz);
 		tbb::spin_mutex mtx[8];
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)dz, std::max(dz / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)dz, max(dz / 128, BCHUNK_SIZE)),
 			[this, bx, by, bz, dx, dy, dz, &mtx, &r](const tbb::blocked_range<int>& b)
 		{
 			for (int z = b.begin(); z < b.end(); ++z)
@@ -826,11 +826,12 @@ namespace rw
 		int length = this->_width*this->_height*this->_depth;
 		auto Pick_Random = [&rnd]()
 		{
-			float s = float(rnd() - rnd.min()) / ((float)rnd.max() - rnd.min());
+			std::uniform_real_distribution<float> urd;
+			float s = urd(rnd);
 			uint rs = (uint)(100.0f * s);
 			return(rs + 100);
 		};
-		tbb::parallel_for(tbb::blocked_range<uint>(0, (uint)length, std::max(length / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<uint>(0, (uint)length, max(length / 128, BCHUNK_SIZE)),
 			[this, &mtx, &color_map, &rnd, &Pick_Random](const tbb::blocked_range<uint>& b)
 		{
 			for (uint i = b.begin(); i < b.end(); ++i)
@@ -989,7 +990,7 @@ namespace rw
 
 		int length = this->_width*this->_height*this->_depth;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, std::max((int)length / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, max((int)length / 128, BCHUNK_SIZE)),
 			[this, &mtx,&structure](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)

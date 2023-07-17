@@ -120,7 +120,7 @@ namespace rw
 				const concurrency::array<rw::Pos3i, 1> asmask((int)smask.size(), smask.begin(), smask.end());				
 				const vec(int)& surface_border = this->Surface_Border();
 				concurrency::array<int, 1> sborder((int)surface_border.size(), surface_border.begin() , surface_border.end());
-				for (int k = 0; k < std::max((int)(surface_border.size() / this->_blockSize + 1), (int)1); ++k)
+				for (int k = 0; k < max((int)(surface_border.size() / this->_blockSize + 1), (int)1); ++k)
 				{
 					int begin = k * this->_blockSize;
 					int size = this->_blockSize;
@@ -161,7 +161,7 @@ namespace rw
 				const concurrency::array<rw::Pos3i, 1> amask((int)mask.size(), mask.begin(), mask.end());
 				const vec(int)& corner_border = this->Corner_Border();
 				concurrency::array<int, 1> border((int)corner_border.size(), corner_border.begin(), corner_border.end());
-				for (int k = 0; k < std::max((int)(corner_border.size() / this->_blockSize + 1), 1); ++k)
+				for (int k = 0; k < max((int)(corner_border.size() / this->_blockSize + 1), 1); ++k)
 				{
 					int begin = k * this->_blockSize;
 					int size = this->_blockSize;
@@ -204,7 +204,7 @@ namespace rw
 		this->_centersToErodeSurface.clear();
 		int tot = size3d.x*size3d.y*size3d.z;		
 		vec(uint)& dilated = *dilatedTexture;
-		tbb::parallel_for(tbb::blocked_range<int>(0, tot, std::max(tot / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, tot, max(tot / 128, BCHUNK_SIZE)),
 			[this, &mtx, diam, &dilated, size3d](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)

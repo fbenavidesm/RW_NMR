@@ -69,7 +69,7 @@ namespace rw
 
 	inline uint BinaryImageOpener::Number_Of_Steps() const
 	{
-		return(std::max(50,std::max(this->Size_3D().x,std::max(this->Size_3D().y,this->Size_3D().z))/8));
+		return(max(50,max(this->Size_3D().x,max(this->Size_3D().y,this->Size_3D().z))/8));
 	}
 
 	inline uint BinaryImageOpener::Accesor_Write_One(concurrency::array<uint, 1>& vtx, const rw::Pos3i& pp, const rw::Pos3i& size) GPUP

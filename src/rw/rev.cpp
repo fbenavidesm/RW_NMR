@@ -74,9 +74,9 @@ void Rev::Build_Subsets()
 	pp.z = this->_secZ - this->_currentSectionSize;
 	oset.insert(pp);
 
-	pp.x = std::max(this->_secX/2 - this->_currentSectionSize/2,0);
-	pp.y = std::max(this->_secY/2- this->_currentSectionSize/2,0);
-	pp.z = std::max(this->_secZ/2 - this->_currentSectionSize/2,0);
+	pp.x = max(this->_secX/2 - this->_currentSectionSize/2,0);
+	pp.y = max(this->_secY/2- this->_currentSectionSize/2,0);
+	pp.z = max(this->_secZ/2 - this->_currentSectionSize/2,0);
 	if (pp.x + this->_currentSectionSize >= this->_secX)
 	{
 		pp.x = this->_secX - this->_currentSectionSize;
@@ -91,36 +91,37 @@ void Rev::Build_Subsets()
 	}
 	oset.insert(pp);
 
+	std::uniform_real_distribution<float> urd;
 	if ((int)oset.size() < this->_setSize)
 	{
 		while ((int)oset.size() < this->_setSize)
 		{
 			Pos3i pp;
-			float rndx = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+			float rndx = urd(this->_gen);
 			pp.x = (int)(rndx*((float)this->_secX));
 			if (pp.x + this->_currentSectionSize >= this->_secX)
 			{
-				rndx = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+				rndx = urd(this->_gen);
 				int dx = (int)(rndx*((float)this->_currentSectionSize));
-				pp.x = std::max(this->_secX-this->_currentSectionSize - dx,0);
+				pp.x = max(this->_secX-this->_currentSectionSize - dx,0);
 			}
 
-			float rndy = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+			float rndy = urd(this->_gen);
 			pp.y = (int)(rndy*((float)this->_secY));
 			if (pp.y + this->_currentSectionSize >= this->_secY)
 			{
-				rndy = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+				rndy = urd(this->_gen);
 				int dy = (int)(rndy*((float)this->_currentSectionSize));
-				pp.y = std::max(this->_secY - this->_currentSectionSize - dy,0);
+				pp.y = max(this->_secY - this->_currentSectionSize - dy,0);
 			}
 
-			float rndz = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+			float rndz = urd(this->_gen);
 			pp.z = (int)(rndz*((float)this->_secZ));
 			if (pp.z + this->_currentSectionSize >= this->_secZ)
 			{
-				rndz = (float)(this->_gen() - this->_gen.min()) / ((float)this->_gen.max());
+				rndz = urd(this->_gen);
 				int dz = (int)(rndz*((float)this->_currentSectionSize));
-				pp.z = std::max(this->_secZ - this->_currentSectionSize - dz,0);
+				pp.z = max(this->_secZ - this->_currentSectionSize - dz,0);
 			}
 			oset.insert(pp);
 		}
@@ -130,7 +131,7 @@ void Rev::Build_Subsets()
 	{
 		while ((int)c_indices.size() < this->_setSize)
 		{
-			uint idx = (uint) ((((float)oset.size())*((float)(this->_gen() - this->_gen.min()))) / ((float)this->_gen.max()));
+			uint idx = (uint) ((float)oset.size())*((float)(urd(this->_gen)));
 			c_indices.insert(idx);
 		}
 	}	

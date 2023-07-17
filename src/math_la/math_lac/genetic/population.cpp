@@ -133,15 +133,15 @@ namespace math_la
 			void Population::Set_Gene_Limits(int indx, int flag, int size)
 			{
 				indx = indx%this->_phenotypeSize;
-				this->_genLimits[indx].sx = std::min(flag, size);
-				this->_genLimits[indx].s = std::max(flag, size);
+				this->_genLimits[indx].sx = min(flag, size);
+				this->_genLimits[indx].s = max(flag, size);
 			}
 
 			void Population::Estimate_Gen_Precision(int idx, scalar valmin, scalar valmax)
 			{
 				int p1 = Population::getPrecision(valmin);
 				int p2 = Population::getPrecision(valmax);
-				this->_genPrecision[idx] = std::max(p1, p2);
+				this->_genPrecision[idx] = max(p1, p2);
 
 			}
 
@@ -180,10 +180,9 @@ namespace math_la
 
 
 			scalar Population::Pick_Random_Normalized_Number()
-			{
-				scalar n = (scalar)(this->_randomNumberGenerator() - this->_randomNumberGenerator.min());
-				scalar nrm = (scalar)this->_randomNumberGenerator.max();
-				return(n/nrm);
+			{								
+				std::uniform_real_distribution<double> urd;
+				return(urd(this->_randomNumberGenerator));
 			}
 
 			queue<Creature*>* Population::Renew()
@@ -301,8 +300,8 @@ namespace math_la
 				scalar dk = pd - (scalar)0.5;
 				dk = dk*d;
 				code = code + (int)(dk*(scalar)code);
-				code = std::max(this->_genLimits[i].sx, code);
-				code = std::min(this->_genLimits[i].s, code);
+				code = max(this->_genLimits[i].sx, code);
+				code = min(this->_genLimits[i].s, code);
 				c->_genes[i] = code;
 				c->_fitness = 0;
 				this->Shape_Creature(c);
@@ -327,8 +326,8 @@ namespace math_la
 					scalar pd = this->Pick_Random_Normalized_Number();
 					scalar dk = pd - (scalar)0.5;
 					dk = dk*d;
-					Sim_Code = std::max(this->_genLimits[g].s - (int)(dk*(scalar)Sim_Code),this->_genLimits[g].sx);
-					Sim_Code = std::min(this->_genLimits[g].s, Sim_Code);
+					Sim_Code = max(this->_genLimits[g].s - (int)(dk*(scalar)Sim_Code),this->_genLimits[g].sx);
+					Sim_Code = min(this->_genLimits[g].s, Sim_Code);
 					c->_genes[g] = Sim_Code;
 					this->Shape_Creature(c);
 					this->Check_Creature_Fixed_Genes(c);

@@ -16,7 +16,9 @@ public:
 	bool OnInit()
 	{		
 		this->_mwin = new WindowMain();
+
 		this->_mwin->Show();	
+
 		return(true);
 
 	};

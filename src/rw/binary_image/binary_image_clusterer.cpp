@@ -42,7 +42,7 @@ namespace rw
 		buffer_ptr = &this->Image_Buffer();
 		vec(uint)& buffer = *buffer_ptr;
 		BinaryImage bimg(&buffer, size3d);
-		int s_max = std::min(size3d.z, std::min(size3d.y, size3d.z));
+		int s_max = min(size3d.z, min(size3d.y, size3d.z));
 		tbb::spin_mutex mtx;
 		const vec(rw::Pos3i) mask = this->Corner_Mask(3);
 		int max_fusion = 1;
@@ -173,7 +173,7 @@ namespace rw
 		}
 		vec(uint)& buffer = *buffer_ptr;
 		BinaryImage bimg(&buffer, size3d);
-		int s_max = std::min(size3d.z, std::min(size3d.y, size3d.z));
+		int s_max = min(size3d.z, min(size3d.y, size3d.z));
 		tbb::spin_mutex mtx;
 		this->Add_Mask(diam);
 		const vec(rw::Pos3i)& mask = this->Corner_Mask(diam);
@@ -309,7 +309,7 @@ namespace rw
 		rw::Pos3i size3d = this->Size_3D();
 		int length = size3d.x*size3d.y*size3d.z;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, std::max((int)length / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, max((int)length / 128, BCHUNK_SIZE)),
 			[this, &fusion, &mtx,size3d](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)
@@ -341,7 +341,7 @@ namespace rw
 		rw::Pos3i size3d = this->Size_3D();
 		int length = size3d.x*size3d.y*size3d.z;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, std::max((int)length / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)length, max((int)length / 128, BCHUNK_SIZE)),
 			[this, &fusion, &mtx, diam,size3d](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)
@@ -386,13 +386,13 @@ namespace rw
 	{
 		int dr = (int)(((float)diam)*1.41f);
 
-		box._eA.x = std::min(center.x - dr, box._eA.x);
-		box._eA.y = std::min(center.y - dr, box._eA.y);
-		box._eA.z = std::min(center.z - dr, box._eA.z);
+		box._eA.x = min(center.x - dr, box._eA.x);
+		box._eA.y = min(center.y - dr, box._eA.y);
+		box._eA.z = min(center.z - dr, box._eA.z);
 
-		box._eB.x = std::max(center.x + dr, box._eB.x);
-		box._eB.y = std::max(center.y + dr, box._eB.y);
-		box._eB.z = std::max(center.z + dr, box._eB.z);
+		box._eB.x = max(center.x + dr, box._eB.x);
+		box._eB.y = max(center.y + dr, box._eB.y);
+		box._eB.z = max(center.z + dr, box._eB.z);
 
 	}
 
@@ -450,7 +450,7 @@ namespace rw
 			pgdlg->Update(this->_step, std::string("Detecting overlapping centers from spheres of diameter ") + std::to_string(diam));
 		}
 
-		tbb::parallel_for(tbb::blocked_range<int>(0, (int)v_centers.size(), std::max((int)v_centers.size() / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, (int)v_centers.size(), max((int)v_centers.size() / 128, BCHUNK_SIZE)),
 			[this, diam, &kdtree, &mtx, &boxes, &v_centers, size3d,&size](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)

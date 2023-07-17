@@ -63,7 +63,7 @@ namespace rw
 		this->_surfaceBorder.reserve((int)black_size);
 		int tot = size3d.x*size3d.y*size3d.z;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, tot, std::max(tot / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, tot, max(tot / 128, BCHUNK_SIZE)),
 			[this, &mtx, size3d](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)
@@ -126,7 +126,7 @@ namespace rw
 		this->_centersToErodeSurface.clear();
 		int tot = size3d.x*size3d.y*size3d.z;
 		vec(uint)& dilated = this->Image_Buffer();
-		tbb::parallel_for(tbb::blocked_range<int>(0, tot, std::max(tot / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, tot, max(tot / 128, BCHUNK_SIZE)),
 			[this, &mtx, diam, &dilated, size3d](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)
@@ -190,7 +190,7 @@ namespace rw
 		concurrency::array<rw::Pos3i, 1> asmask((int)smask.size(), smask.begin());
 
 		concurrency::array<int, 1> scenters((int)this->_centersToErodeSurface.size(), this->_centersToErodeSurface.begin(), this->_centersToErodeSurface.end());
-		for (int k = 0; k < std::max((int)(this->_centersToErodeSurface.size() / this->_blockSize + 1), (int)1); ++k)
+		for (int k = 0; k < max((int)(this->_centersToErodeSurface.size() / this->_blockSize + 1), (int)1); ++k)
 		{
 			int begin = k * this->_blockSize;
 			int size = this->_blockSize;
@@ -232,7 +232,7 @@ namespace rw
 		concurrency::array<rw::Pos3i, 1> amask((int)mask.size(), mask.begin());
 
 		concurrency::array<int, 1> ccenters((int)this->_centersToErodeCorner.size(), this->_centersToErodeCorner.begin(), this->_centersToErodeCorner.end());
-		for (int k = 0; k < std::max((int)(this->_centersToErodeCorner.size() / this->_blockSize + 1), (int)1); ++k)
+		for (int k = 0; k < max((int)(this->_centersToErodeCorner.size() / this->_blockSize + 1), (int)1); ++k)
 		{
 			int begin = k * this->_blockSize;
 			int size = this->_blockSize;
@@ -287,7 +287,7 @@ namespace rw
 				const vec(rw::Pos3i)& smask = this->Surface_Mask(diam);
 				const concurrency::array<rw::Pos3i, 1> asmask((int)smask.size(), smask.begin(), smask.end());
 				concurrency::array<int, 1> sborder((int)surface_border.size(), surface_border.begin(), surface_border.end());
-				for (int k = 0; k < std::max((int)(surface_border.size() / this->_blockSize + 1), (int)1); ++k)
+				for (int k = 0; k < max((int)(surface_border.size() / this->_blockSize + 1), (int)1); ++k)
 				{
 					int begin = k * this->_blockSize;
 					int size = this->_blockSize;
@@ -326,7 +326,7 @@ namespace rw
 				const vec(rw::Pos3i)& mask = this->Corner_Mask(diam);
 				const concurrency::array<rw::Pos3i, 1> amask((int)mask.size(), mask.begin(), mask.end());
 				concurrency::array<int, 1> border((int)corner_border.size(), corner_border.begin(), corner_border.end());
-				for (int k = 0; k < std::max((int)(corner_border.size() / this->_blockSize + 1), 1); ++k)
+				for (int k = 0; k < max((int)(corner_border.size() / this->_blockSize + 1), 1); ++k)
 				{
 					int begin = k * this->_blockSize;
 					int size = this->_blockSize;

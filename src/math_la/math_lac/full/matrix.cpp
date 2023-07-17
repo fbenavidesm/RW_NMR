@@ -461,7 +461,7 @@ namespace math_la
 			void Matrix::QR_Fact(full::Matrix& Q, full::Matrix& R, bool update) const
 			{
 				Matrix A = *this;
-				scalar* tau = allocScalar(std::min(A._rows,A._cols));
+				scalar* tau = allocScalar(A._rows < A._cols ? A._rows : A._cols);
 				LAPACKE_dgeqrf(LAPACK_ROW_MAJOR,A._rows,A._cols,A._data,A._cols,tau);
 				if (!update)
 				{
@@ -677,7 +677,7 @@ namespace math_la
 					int k;
 					for (k = 0; k < n; ++k)
 					{
-						scalar Voxel_Length = std::max((scalar)0,xk(k) - u(k) / H(k, k));
+						scalar Voxel_Length = max((scalar)0,xk(k) - u(k) / H(k, k));
 						xkp(k, Voxel_Length);
 						if (xkp(k) != xk(k))
 						{
@@ -808,8 +808,8 @@ namespace math_la
 				IndxSet::const_iterator ip;
 				bool elp = true;
 				int its = 0;
-				int maxits = std::max(n, m);
-				maxits = std::min(maxits, MAX_ITERATIONS);
+				int maxits = max(n, m);
+				maxits = min(maxits, MAX_ITERATIONS);
 				while ((elp) && (its < maxits))
 				{
 					++its;

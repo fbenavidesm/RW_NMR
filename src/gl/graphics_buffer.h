@@ -5,10 +5,10 @@
 #include <istream>
 #include <fstream>
 #include <vector>
+#include "wx/wx.h"
 #include "math_la/mdefs.h"
 #include "GL/glew.h"
 #include "math_la/math_lac/space/vec3.h"
-#include "wx/wx.h"
 
 namespace gl
 {

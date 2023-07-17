@@ -44,7 +44,7 @@ namespace rw
 		this->_surfaceBorder->reserve((int)this->Image().Black_Voxels());
 		int tot = this->_size.x * this->_size.y * this->_size.z;
 		tbb::spin_mutex mtx;
-		tbb::parallel_for(tbb::blocked_range<int>(0, tot, std::max(tot / 128, BCHUNK_SIZE)),
+		tbb::parallel_for(tbb::blocked_range<int>(0, tot, max(tot / 128, BCHUNK_SIZE)),
 			[this, &mtx](const tbb::blocked_range<int>& b)
 		{
 			for (int i = b.begin(); i < b.end(); ++i)

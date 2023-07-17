@@ -1,9 +1,9 @@
 #ifndef DLG_REGULARIZER_H
 #define DLG_REGULARIZER_H
 
+#include "wx/wx.h"
 #include "math_la/mdefs.h"
 #include "math_la/math_lac/full/vector.h"
-#include "wx/wx.h"
 #include "front_end/wx_plotter.h"
 #include "rw/persistence/plug_persistent.h"
 #include "wx/slider.h"

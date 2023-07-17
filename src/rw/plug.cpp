@@ -27,7 +27,7 @@ namespace rw
 		this->_simParams.Set_Value(PROFILE_SIZE, 32768);
 		this->_simParams.Set_Value(PROFILE_UPDATE, 0);
 		this->_simParams.Set_Bool(VARYING, false);
-		this->_simParams.Set_Value(ITERATION_LIMIT, std::numeric_limits<int>::max());
+		this->_simParams.Set_Value(ITERATION_LIMIT, 1000000000);
 		this->_decayValues.reserve(16000);
 		this->_surfaceRelaxationRate = (scalar)0.01;
 		this->_bulkRelaxationTime = (scalar)0.0001;
@@ -65,7 +65,7 @@ namespace rw
 	{
 		if (maxit == 0)
 		{
-			this->_simParams.Set_Value(ITERATION_LIMIT,std::numeric_limits<int>::max());
+			this->_simParams.Set_Value(ITERATION_LIMIT,100000000);
 		}
 		else
 		{
@@ -182,7 +182,7 @@ namespace rw
 			this->_walkers.resize(N);
 			this->_walkersStartPosition.resize(N);
 		}
-		this->_simParams.Set_Value(MIN_WALKERS_PER_THREAD,std::max((uint)(N/128),(uint)128));
+		this->_simParams.Set_Value(MIN_WALKERS_PER_THREAD,max((uint)(N/128),(uint)128));
 	}
 
 	bool Plug::Has_Walk_Event() const
@@ -260,7 +260,7 @@ namespace rw
 	{
 		uint ss = this->_simParams.Get_Value(PROFILE_SIZE);
 		uint compr = this->_simParams.Get_Value(PROFILE_UPDATE);
-		int rr = std::max((int)(this->_walkers.size() / (10 * ss)), (int)1);
+		int rr = max((int)(this->_walkers.size() / (10 * ss)), (int)1);
 		map<int, int> xiprof;
 		vector<scalar> hst(this->_walkers.size());
 		vector<scalar>* chst = new vector<scalar>(compr);
@@ -293,8 +293,8 @@ namespace rw
 		for (uint i = 0; i < ss; ++i)
 		{
 			int k = (int)(((scalar)i)*factor);
-			int flag = std::max(0, k - rr);
-			int size = std::min(k + rr, (int)this->_walkers.size());
+			int flag = max(0, k - rr);
+			int size = min(k + rr, (int)this->_walkers.size());
 			int n = 0;
 			scalar xi = 0;
 			for (int j = flag; j < size; ++j)
@@ -371,10 +371,10 @@ namespace rw
 	scalar Plug::Pick_Random_Normalized_Number()
 	{
 		this->Lock();
-		scalar n = (scalar)(this->_randomGenerator() - this->_randomGenerator.min());
+		std::uniform_real_distribution<double> urd;
+		double n = urd(this->_randomGenerator);
 		this->UnLock();
-		scalar d = (scalar)(this->_randomGenerator.max() - this->_randomGenerator.min());
-		return(n / d);
+		return(n);
 	}
 
 

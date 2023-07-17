@@ -115,12 +115,12 @@ void ProfileSimulator::Update(int itr)
 {
 	int id = itr / this->Profile_Update_Interval();
 	const vector<scalar>& mp = this->Sequential_Profile(id);
-	int rr = std::max((int)mp.size() / (int)(2*this->_particlesEnergy->size()),1);
+	int rr = max((int)mp.size() / (int)(2*this->_particlesEnergy->size()),1);
 	for (int k = 0; k < this->_particlesEnergy->size(); ++k)
 	{
 		int idk = (k*((int)mp.size())) / (int)this->_particlesEnergy->size();
-		int flag = std::max(0, idk - rr);
-		int size = std::min((int)mp.size(), idk + rr);
+		int flag = max(0, idk - rr);
+		int size = min((int)mp.size(), idk + rr);
 		int n = 0;
 		scalar avg = 0;
 		for (int j = flag; j < size; ++j)
